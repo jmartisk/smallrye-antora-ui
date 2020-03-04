@@ -7,10 +7,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: npm install, build, and test
+      - name: npm install
         run: |
           npm install
-          gulp package
+
+      - name: package the UI
+          run: |
+            gulp --tasks-simple
+            gulp package
 
       - name: Publish UI artifact
         uses: actions/upload-artifact@v1
