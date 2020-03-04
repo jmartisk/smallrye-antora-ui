@@ -12,9 +12,9 @@ jobs:
           npm install
 
       - name: package the UI
-          run: |
-            gulp --tasks-simple
-            gulp package
+        run: |
+          gulp --tasks-simple
+          gulp package
 
       - name: Publish UI artifact
         uses: actions/upload-artifact@v1
