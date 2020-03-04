@@ -27,3 +27,18 @@
 #        with:
 #          name: ui-bundle.zip
 #          path: build/ui-bundle.zip
+
+# Temporary solution - instead of building the UI as an artifact, we verify
+# that ui bundle is included directly in the repo
+name: Verify that there is a build/ui-bundle.zip file
+on: [push]
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Verify that there is a build/ui-bundle.zip
+        run: |
+          [ -f build/ui-bundle.zip ]
