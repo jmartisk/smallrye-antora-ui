@@ -13,7 +13,7 @@ jobs:
 
       - name: package the UI
         run: |
-          gulp bundle:pack
+          gulp pack
 
       - name: Publish UI artifact
         uses: actions/upload-artifact@v1
