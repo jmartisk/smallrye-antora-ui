@@ -10,6 +10,17 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+
+          <!-- TODO: This is the navigation. Do we want it here? -->
+          <div class="navbar-dropdown">
+{{#each site.components}}
+            <a class="navbar-item" href="{{{relativize ./latestVersion/url}}}">{{{./title}}}</a>
+{{/each}}
+          </div>
+
+        </div>
         <a class="navbar-item" href="https://smallrye.io/" alt=>SmallRye.io main website</a>
       </div>
     </div>
